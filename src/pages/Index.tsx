@@ -69,7 +69,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl blur-3xl"></div>
                 <div className="relative bg-card rounded-2xl overflow-hidden border border-border p-4 animate-float">
                   <img
-                    src="/profilepic.jpeg"
+                    src={`${import.meta.env.BASE_URL}profilepic.jpeg`}
                     alt="Profile"
                     className="w-full h-full object-cover rounded-xl"
                   />

@@ -55,7 +55,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href="/cv.pdf"
+            href={`${import.meta.env.BASE_URL}cv.pdf`}
             className="btn-secondary text-sm"
             target="_blank"
             rel="noopener noreferrer" 
@@ -104,7 +104,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="/cv.pdf"
+              href={`${import.meta.env.BASE_URL}cv.pdf`}
               target="_blank" 
               rel="noopener noreferrer"
               className="block text-sm font-medium text-foreground hover:text-accent"

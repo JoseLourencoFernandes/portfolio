@@ -1,0 +1,143 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Dark Portfolio Theme
+   * Background: #0B0F14
+   * Surface: #111827
+   * Elevated: #1F2937
+   * Accent: #3B82F6 (Modern Blue)
+   * Text Primary: #E5E7EB
+   * Text Secondary: #9CA3AF
+   * Text Muted: #6B7280
+   */
+  :root {
+    /* Dark background colors */
+    --background: 215 48% 6%;
+    --foreground: 210 13% 91%;
+
+    --card: 215 40% 9%;
+    --card-foreground: 210 13% 91%;
+
+    --popover: 215 40% 9%;
+    --popover-foreground: 210 13% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 215 48% 6%;
+
+    --secondary: 215 28% 20%;
+    --secondary-foreground: 210 13% 91%;
+
+    --muted: 210 11% 45%;
+    --muted-foreground: 210 14% 62%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 215 48% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 20%;
+    --input: 215 40% 9%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 215 48% 6%;
+    --foreground: 210 13% 91%;
+
+    --card: 215 40% 9%;
+    --card-foreground: 210 13% 91%;
+
+    --popover: 215 40% 9%;
+    --popover-foreground: 210 13% 91%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 215 48% 6%;
+
+    --secondary: 215 28% 20%;
+    --secondary-foreground: 210 13% 91%;
+
+    --muted: 210 11% 45%;
+    --muted-foreground: 210 14% 62%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 215 48% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 20%;
+    --input: 215 40% 9%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-y: scroll;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    scrollbar-gutter: stable;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-foreground transition-colors hover:text-accent;
+  }
+
+  .nav-link.active::after {
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-accent;
+    content: "";
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg bg-accent text-accent-foreground font-medium transition-all hover:shadow-lg hover:shadow-accent/20 hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg border border-border text-foreground font-medium transition-all hover:bg-secondary hover:border-accent;
+  }
+
+  .glow-border {
+    @apply border border-accent/20 transition-all hover:border-accent hover:shadow-lg hover:shadow-accent/20;
+  }
+}
